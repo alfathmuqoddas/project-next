@@ -15,13 +15,13 @@ export default function Home({ users }) {
   return (
     <Wrapper>
       <Head>
-        <title>Simple Next App</title>
+        <title>Next App</title>
         <meta property="og:title" content="My page title" key="title" />
       </Head>
     <h1>List of Users</h1>
     { users.map(user => (
       <Link key={user.id} href={"/details/" + user.id}>
-          <h3>{user.name}</h3>
+          <a><h3>{user.name}</h3></a>
       </Link>
     ))}
     </Wrapper>

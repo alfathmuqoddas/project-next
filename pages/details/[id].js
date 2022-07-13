@@ -21,23 +21,32 @@ export const getStaticPaths = async () => {
 export const getStaticProps = async (context) => {
  const id = context.params.id;
  const res = await fetch('https://jsonplaceholder.typicode.com/users/' + id);
+ const res2 = await fetch('https://jsonplaceholder.typicode.com/posts?userId=' + id);
  const data = await res.json();
+ const data2 = await res2.json();
 
  return {
-     props: { user: data }
+     props: { user: data, posts: data2 }
  }
 }
 
-const Details = ({ user }) => {
+const Details = ({ user, posts }) => {
     return (
         <Wrapper>
             <Head>
-            <title>Detail User</title>
+                <title>{ user.name }</title>
+                <meta property="og:title" content="My page title" key="title" />
             </Head>
             <h1>{ user.name }</h1>
-            <p>{ user. email }</p>
-            <p>{ user. website }</p>
-            <p>{ user. address.city }</p>
+            <p>{ user. email } | <a href={ user. website }>{ user. website }</a> | { user. address.city }</p>
+            
+            { posts.map(post => (
+                <ul><li><a>
+                    <Link key={post.id} href={"/posts/" + post.id}>
+                        {post.title}
+                    </Link>
+                </a></li></ul>
+            ))}
         </Wrapper>
     )
 }
