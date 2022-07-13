@@ -15,7 +15,7 @@ export default function Home({ users }) {
   return (
     <Wrapper>
       <Head>
-        <title>Next App</title>
+        <title>Next App Dev</title>
         <meta name="description" content="Checkout our cool page" key="desc" />
       </Head>
     <h1>List of Users</h1>
