@@ -16,7 +16,7 @@ export default function Home({ users }) {
     <Wrapper>
       <Head>
         <title>Next App</title>
-        <meta property="og:title" content="My page title" key="title" />
+        <meta name="description" content="Checkout our cool page" key="desc" />
       </Head>
     <h1>List of Users</h1>
     { users.map(user => (

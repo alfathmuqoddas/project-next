@@ -32,8 +32,10 @@ const Post = ({ post }) => {
     return (
         <Wrapper>
             <Head>
-                <title>{ post.title }</title>
-                <meta property="og:title" content="My page title" key="title" />
+                <title>{ post.title } | Next App</title>
+                <meta property="og:title" content={`Next App ${post.title}`} key="title" />
+                <meta property="og:description" content={`Next App ${post.title}`} key="description" />
+                <meta name="description" content={`Checkout ${post.title} details on Next App`} key="desc" />
             </Head>
             <h1>{ post.title }</h1>
             <p>{ post.body }</p>

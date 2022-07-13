@@ -5,13 +5,13 @@ const Navbar = () => {
         <>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 		  <div className="container">
-		    <Link className="navbar-brand" href="/">Next Blog</Link>
-		    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-		      <span class="navbar-toggler-icon"></span>
+		    <Link href="/"><a className="navbar-brand">Next Blog</a></Link>
+		    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+		      <span className="navbar-toggler-icon"></span>
 		    </button>
-		    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-		      <div class="navbar-nav">
-		        <Link className="nav-link" href="/posts">All Posts</Link>
+		    <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+		      <div className="navbar-nav">
+		        <Link href="/posts"><a className="nav-link">All Posts</a></Link>
 		      </div>
 		    </div>
 		  </div>

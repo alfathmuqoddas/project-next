@@ -34,19 +34,21 @@ const Details = ({ user, posts }) => {
     return (
         <Wrapper>
             <Head>
-                <title>{ user.name }</title>
-                <meta property="og:title" content="My page title" key="title" />
+                <title>{ user.name } | Next App</title>
+                <meta property="og:title" content={`Next App ${user.name}`} key="title" />
+                <meta name="description" content={`Checkout ${user.name} on Next App`} key="desc" />
             </Head>
             <h1>{ user.name }</h1>
             <p>{ user. email } | <a href={ user. website }>{ user. website }</a> | { user. address.city }</p>
-            
+            <ul>
             { posts.map(post => (
-                <ul><li><a>
-                    <Link key={post.id} href={"/posts/" + post.id}>
-                        {post.title}
-                    </Link>
-                </a></li></ul>
+                <li key={post.id}>
+                <Link href={"/posts/" + post.id}>
+                    {post.title}
+                </Link>
+                </li>
             ))}
+            </ul>
         </Wrapper>
     )
 }

@@ -15,19 +15,19 @@ const Index = ({posts}) => {
     return (
         <Wrapper>
             <Head>
-                <title>All Posts</title>
+                <title>All Posts | Next App</title>
                 <meta property="og:title" content="My page title" key="title" />
             </Head>
             <h1>List of All Posts</h1>
-            { posts.map(post => (
-            <ul>
-                <li>
-                <Link key={post.id} href={"/posts/" + post.id}>
-                    {post.title}
-                </Link>
-                </li>
-            </ul>
-            ))}
+            <ol>
+                    { posts.map(post => (
+                        <li key={post.id} >
+                        <Link href={"/posts/" + post.id}>
+                            {post.title}
+                        </Link>
+                        </li>
+                    ))}
+            </ol>
         </Wrapper>
     )
 }
