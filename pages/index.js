@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Wrapper from '../components/Wrapper';
 import Link from 'next/link';
-import Image from 'next/image';
+//import Image from 'next/image';
 
 export const getStaticProps = async () => {
   const res = await fetch('https://jsonplaceholder.typicode.com/users');
@@ -25,7 +25,7 @@ export default function Home({ users }) {
       { users.map(user => (
         <div key={user.id} className="col gy-3">
           <div className="card"  style={{ minHeight: "16rem" }}>
-          <Image src={`https://picsum.photos/seed/${user.name}/640/360`} className="card-img-top" width={640} height={360} alt="..." />
+          <img src={`https://picsum.photos/seed/${user.name}/640/360`} className="card-img-top" alt="..." />
           <div className="card-body">
             <Link href={"/details/" + user.id}>
                 <a><h4 className='card-title'>{user.name}</h4></a>
