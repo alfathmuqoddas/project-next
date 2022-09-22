@@ -4,6 +4,7 @@ const nextConfig = {
 }
 
 module.exports = {
+  output: 'standalone',
   webpackDevMiddleware: config => {
     config.watchOptions = {
       poll: 1000,
@@ -11,5 +12,5 @@ module.exports = {
     }
     return config
   },
-  nextConfig
+  nextConfig,
 }
